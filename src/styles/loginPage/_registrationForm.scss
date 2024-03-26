@@ -1,0 +1,58 @@
+.logo {
+  text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  img {
+    width: 64px;
+    height: 64px;
+  }
+}
+.registration-wrapper {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #161d2f;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  color: white;
+
+  h2 {
+    text-align: center;
+  }
+
+  .registration-inner {
+    padding: 50px;
+
+    .input-wrapper {
+      margin-bottom: 20px;
+
+      input {
+        background-color: white;
+        opacity: 75%;
+        padding: 10px;
+        width: 85%;
+        border-radius: 10px;
+      }
+    }
+
+    .button-wrapper {
+      text-align: center;
+
+      button {
+        color: white;
+        padding: 8px;
+        width: 50%;
+        border-radius: 10px;
+        background-color: #e34040;
+        cursor: pointer;
+      }
+    }
+  }
+}

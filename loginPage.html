@@ -21,11 +21,16 @@
 
         <form id="loginForm">
           <div class="login-input-wrapper">
-            <input type="text" name="" placeholder="Email" />
+            <input type="text" name="" id="loginEmail" placeholder="Email" />
           </div>
 
           <div class="login-input-wrapper">
-            <input type="password" name="" placeholder="Passowrd" />
+            <input
+              type="password"
+              name=""
+              id="loginPassword"
+              placeholder="Passowrd"
+            />
           </div>
 
           <div class="button-wrapper">
@@ -36,6 +41,52 @@
         <div class="no-acc">
           <p>Don't have an account? <span>Sing up</span></p>
         </div>
+      </div>
+    </div>
+
+    <div class="registration-wrapper">
+      <div class="registration-inner">
+        <h2>Registration</h2>
+
+        <form id="registrationForm">
+          <div class="input-wrapper">
+            <input
+              type="usernmae"
+              name="registrationUsername"
+              id="registrationUsername"
+              placeholder="Username"
+            />
+          </div>
+
+          <div class="input-wrapper">
+            <input
+              type="email"
+              name="registrationEmail"
+              id="registrationEmail"
+              placeholder="Email"
+            />
+          </div>
+
+          <div class="input-wrapper">
+            <input
+              name="registrationPassword"
+              id="registrationPassword"
+              placeholder="Passowrd"
+            />
+          </div>
+
+          <div class="input-wrapper">
+            <input
+              name="registrationRepeatPassword"
+              id="registrationRepeatPassword"
+              placeholder="Repeat Password"
+            />
+          </div>
+
+          <div class="button-wrapper">
+            <button id="registrationBtn">Sign Up</button>
+          </div>
+        </form>
       </div>
     </div>
   </body>
