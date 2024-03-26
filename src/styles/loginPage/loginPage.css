@@ -1,0 +1,60 @@
+body {
+  background-color: #10141e;
+}
+body .logo {
+  text-align: center;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body .logo img {
+  width: 64px;
+  height: 64px;
+}
+body .login-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #161d2f;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  color: white;
+}
+body .login-wrapper h2 {
+  text-align: center;
+}
+body .login-wrapper .login-inner {
+  padding: 50px;
+}
+body .login-wrapper .login-inner .login-input-wrapper {
+  margin-bottom: 20px;
+}
+body .login-wrapper .login-inner .login-input-wrapper input {
+  background-color: white;
+  opacity: 75%;
+  padding: 10px;
+  width: 85%;
+  border-radius: 10px;
+}
+body .login-wrapper .login-inner .button-wrapper {
+  text-align: center;
+}
+body .login-wrapper .login-inner .button-wrapper button {
+  color: white;
+  padding: 8px;
+  width: 50%;
+  border-radius: 10px;
+  background-color: #e34040;
+  cursor: pointer;
+}
+body .login-wrapper .login-inner .no-acc {
+  text-align: center;
+}
+body .login-wrapper .login-inner .no-acc span {
+  color: #e34040;
+  cursor: pointer;
+}/*# sourceMappingURL=loginPage.css.map */

@@ -4,8 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Login</title>
+
+    <link rel="icon" type="image/x-icon" href="src/images/logo.png" />
+    <link rel="stylesheet" href="src/styles/loginPage/loginPage.css" />
     <script type="module" src="dist/controller.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div class="logo">
+      <img src="src/images/logo.png" alt="" />
+    </div>
+
+    <div class="login-wrapper">
+      <div class="login-inner">
+        <h2>Login In</h2>
+
+        <form id="loginForm">
+          <div class="login-input-wrapper">
+            <input type="text" name="" placeholder="Email" />
+          </div>
+
+          <div class="login-input-wrapper">
+            <input type="password" name="" placeholder="Passowrd" />
+          </div>
+
+          <div class="button-wrapper">
+            <button id="loginBtn">Login in</button>
+          </div>
+        </form>
+
+        <div class="no-acc">
+          <p>Don't have an account? <span>Sing up</span></p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
