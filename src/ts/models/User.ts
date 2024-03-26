@@ -1,6 +1,6 @@
 import { fetchData, API_URL_USERS } from '../helpers/helpers.js';
 import { session } from './Session.js';
-import { ConfigUser, UsersState } from '../configs/user-config';
+import { ConfigUser, UsersState } from '../configs/user-config.js';
 
 export const stateUser = {
   user: {},
