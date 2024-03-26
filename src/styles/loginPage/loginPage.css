@@ -73,6 +73,8 @@ body .login-wrapper .login-inner .no-acc span {
 
 .registration-wrapper {
   display: none;
+  opacity: 0;
+  transition: all 1s;
   position: absolute;
   top: 50%;
   left: 50%;
