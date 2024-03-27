@@ -1,0 +1,35 @@
+.main {
+  .nav {
+    background-color: #161d2f;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .logo {
+      img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    .info-wrapper {
+      text-align: right;
+      color: white;
+      font-size: 20px;
+
+      span {
+        margin-left: 20px;
+      }
+
+      #username {
+        margin-left: 0;
+      }
+
+      img {
+        margin-left: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}

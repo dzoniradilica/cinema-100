@@ -3,14 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Homepage</title>
 
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="src/styles/homepage/homepage.css" />
     <script
       type="module"
       src="src/ts/controllers/homepage-controller.ts"
     ></script>
   </head>
   <body>
-    <h2>alooooo</h2>
+    <div class="main">
+      <div class="nav">
+        <div class="col-md-4">
+          <div class="logo">
+            <img src="src/images/logo.png" alt="logo" />
+          </div>
+        </div>
+
+        <div class="col-md-8">
+          <div class="info-wrapper">
+            <span>Welcome back, <span id="username">Nikola</span></span>
+            <span>Log out </span>
+            <img src="src/images/logout.png" alt="logout" />
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

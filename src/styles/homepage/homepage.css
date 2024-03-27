@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main .nav {
+  background-color: #161d2f;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.main .nav .logo img {
+  width: 48px;
+  height: 48px;
+}
+.main .nav .info-wrapper {
+  text-align: right;
+  color: white;
+  font-size: 20px;
+}
+.main .nav .info-wrapper span {
+  margin-left: 20px;
+}
+.main .nav .info-wrapper #username {
+  margin-left: 0;
+}
+.main .nav .info-wrapper img {
+  margin-left: 10px;
+  cursor: pointer;
+}/*# sourceMappingURL=homepage.css.map */
