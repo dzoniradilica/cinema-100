@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #10141e;
+}
+
 .main .nav {
   background-color: #161d2f;
   padding: 15px;
@@ -29,4 +33,89 @@
 .main .nav .info-wrapper img {
   margin-left: 10px;
   cursor: pointer;
+}
+
+.main .movies-nav-wrapper {
+  margin-top: 100px;
+}
+.main .movies-nav-wrapper .col-md-10 {
+  float: none !important;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #161d2f;
+  padding: 10px;
+  border-radius: 10px;
+}
+.main .movies-nav-wrapper .col-md-10 .movie-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.main .movies-nav-wrapper .col-md-10 .movie-nav .form {
+  max-width: 20%;
+}
+.main .movies-nav-wrapper .col-md-10 .movie-nav .form input {
+  background-color: hsl(0, 0%, 75%);
+  color: black !important;
+}
+.main .movies-nav-wrapper .col-md-10 .movie-nav .nav-wrapper select {
+  background-color: hsl(0, 0%, 75%);
+  margin-right: 20px;
+  border-radius: 5px;
+}
+.main .movies-wrapper {
+  padding-bottom: 100px;
+}
+.main .movies-wrapper .col-md-10 {
+  float: none !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main .movies-wrapper .col-md-10 h3 {
+  color: white;
+  margin-bottom: 20px;
+}
+.main .movies-wrapper .col-md-10 .col-md-3 {
+  padding: 0;
+}
+.main .movies-wrapper .col-md-10 .col-md-3 .movie-card {
+  max-width: 250px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+}
+.main .movies-wrapper .col-md-10 .col-md-3 .movie-card h4 {
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+}
+.main .movies-wrapper .col-md-10 .col-md-3 .movie-card .image-wrapper .movie-img {
+  width: 100%;
+  height: auto;
+  transition: 1s ease;
+}
+.main .movies-wrapper .col-md-10 .col-md-3 .movie-card .image-wrapper .movie-img:hover {
+  opacity: 0.75;
+}
+.main .movies-wrapper .col-md-10 .col-md-3 .movie-card .movie-info {
+  display: flex;
+  align-items: center;
+}
+.main .movies-wrapper .col-md-10 .col-md-3 .movie-card .movie-info span {
+  margin-right: 10px;
+  font-size: 16px;
+}
+.main .movies-wrapper .col-md-10 .col-md-3 .movie-card .movie-info span:hover {
+  color: black;
+}
+.main .movies-wrapper .col-md-10 .col-md-3 .movie-card .movie-info .rating {
+  display: flex;
+  align-items: flex-start;
+}
+.main .movies-wrapper .col-md-10 .col-md-3 .movie-card .movie-info .rating img {
+  margin-right: 5px;
+}
+.main .movies-wrapper .col-md-10 .col-md-3 .movie-card .movie-info .rating span {
+  margin-right: 10px;
+  font-size: 16px;
 }/*# sourceMappingURL=homepage.css.map */
