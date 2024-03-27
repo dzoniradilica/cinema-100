@@ -3,6 +3,7 @@ import { validator } from '../Validator.js';
 import { session } from '../models/Session.js';
 
 import registrationView from '../views/loginPageViews/registrationView.js';
+import loginView from '../views/loginPageViews/loginView.js';
 
 if (session.get(document.cookie.split('=')[0])) {
   window.location.href = '../../../homepage.html';
@@ -31,20 +32,24 @@ const controlRegistrationUser = async function (userData: string[]) {
   }
 };
 
+const controlLoginUser = async function (userData: string[]) {
+  const [email, password] = userData;
+
+  await user.login(email, password);
+};
+
 const init = function () {
-  registrationView.addHandlerSubmit(controlRegistrationUser);
+  registrationView.addHandlerRegistration(controlRegistrationUser);
+  loginView.addHandlerLogin(controlLoginUser);
 };
 
 init();
 
-const idk = async function () {
-  const url = await fetch(
-    'https://api.themoviedb.org/3/movie/157336?api_key=8d8020ec49fb41dfe970d8bbe92fdd07'
-  );
+// const idk = async function () {
+//   const res = await fetch(`https://65fb1a4614650eb210095a6f.mockapi.io/movies`);
+//   const data = await res.json();
 
-  const data = await url.json();
+//   console.log(data);
+// };
 
-  console.log(data);
-};
-
-idk();
+// idk();
