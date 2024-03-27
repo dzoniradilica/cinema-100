@@ -35,6 +35,10 @@ body {
   cursor: pointer;
 }
 
+.hidden {
+  display: none;
+}
+
 .main .movies-nav-wrapper {
   margin-top: 100px;
 }
@@ -89,13 +93,23 @@ body {
   font-size: 15px;
   font-weight: bold;
 }
+.main .movies-wrapper .col-md-10 .col-md-3 .movie-card .image-wrapper {
+  position: relative;
+}
 .main .movies-wrapper .col-md-10 .col-md-3 .movie-card .image-wrapper .movie-img {
   width: 100%;
   height: auto;
-  transition: 1s ease;
 }
-.main .movies-wrapper .col-md-10 .col-md-3 .movie-card .image-wrapper .movie-img:hover {
-  opacity: 0.75;
+.main .movies-wrapper .col-md-10 .col-md-3 .movie-card .image-wrapper a {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+.main .movies-wrapper .col-md-10 .col-md-3 .movie-card .image-wrapper:hover {
+  opacity: 0.8;
 }
 .main .movies-wrapper .col-md-10 .col-md-3 .movie-card .movie-info {
   display: flex;
@@ -104,9 +118,6 @@ body {
 .main .movies-wrapper .col-md-10 .col-md-3 .movie-card .movie-info span {
   margin-right: 10px;
   font-size: 16px;
-}
-.main .movies-wrapper .col-md-10 .col-md-3 .movie-card .movie-info span:hover {
-  color: black;
 }
 .main .movies-wrapper .col-md-10 .col-md-3 .movie-card .movie-info .rating {
   display: flex;

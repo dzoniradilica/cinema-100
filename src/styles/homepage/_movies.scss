@@ -1,3 +1,7 @@
+.hidden {
+  display: none;
+}
+
 .main {
   .movies-nav-wrapper {
     margin-top: 100px;
@@ -63,14 +67,23 @@
           }
 
           .image-wrapper {
+            position: relative;
             .movie-img {
               width: 100%;
               height: auto;
-              transition: 1s ease;
+            }
 
-              &:hover {
-                opacity: 0.75;
-              }
+            a {
+              position: absolute;
+              bottom: 0;
+              left: 5%;
+              color: white;
+              text-decoration: none;
+              font-size: 16px;
+            }
+
+            &:hover {
+              opacity: 0.8;
             }
           }
 
@@ -81,10 +94,6 @@
             span {
               margin-right: 10px;
               font-size: 16px;
-
-              &:hover {
-                color: black;
-              }
             }
 
             .rating {
