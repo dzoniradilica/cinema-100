@@ -55,9 +55,7 @@ const controlDisplayMovies = async function () {
 };
 
 const controlPagination = async function (btnId: number) {
-  console.log(btnId);
-
-  displayMoviesView.displayMovies(await paginationResults(btnId));
+  displayMoviesView.displayMovies(paginationResults(btnId));
 };
 
 const init = function () {

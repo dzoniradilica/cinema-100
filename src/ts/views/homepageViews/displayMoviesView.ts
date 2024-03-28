@@ -10,6 +10,7 @@ class DisplayMoviesView {
   )! as HTMLDivElement;
 
   displayMovies(allMovies: ConfigMovie[]) {
+    this.parentElement.innerHTML = '';
     const html = allMovies
       .map(movie => {
         return `
@@ -30,6 +31,7 @@ class DisplayMoviesView {
 
                 <div class="rating">
                     <span>${movie.rating}</span>
+                    <span style="font-size:14px;color:yellow;">&starf;</span>
                 </div>
 
                 <span class="genre">${[...movie.genre]}</span>

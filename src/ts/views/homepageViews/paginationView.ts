@@ -45,13 +45,13 @@ class PaginationView {
           .previousElementSibling as HTMLDivElement
       ).querySelectorAll('.pagination-btn') as NodeListOf<HTMLButtonElement>;
 
-      if (btnId > paginationBtns.length) {
+      if (btnId >= paginationBtns.length) {
         (e.target! as HTMLButtonElement).setAttribute(
           'data-current-btn',
-          String(1)
+          String(paginationBtns.length)
         );
 
-        btnId = 1;
+        btnId = paginationBtns.length;
       }
 
       this.changeColorBtn(this.leftArrow, btnId, paginationBtns);
@@ -70,16 +70,16 @@ class PaginationView {
         (e.target! as HTMLButtonElement).nextElementSibling as HTMLDivElement
       ).querySelectorAll('.pagination-btn') as NodeListOf<HTMLButtonElement>;
 
-      if (btnId === 1) {
+      btnId--;
+
+      if (btnId <= 1) {
         (e.target! as HTMLButtonElement).setAttribute(
           'data-current-btn',
-          String(paginationBtns.length + 1)
+          String(1)
         );
 
-        btnId = paginationBtns.length + 1;
+        btnId = 1;
       }
-
-      btnId--;
 
       // Update dataset
       (e.target! as HTMLButtonElement).setAttribute(

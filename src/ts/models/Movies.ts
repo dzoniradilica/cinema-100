@@ -23,9 +23,7 @@ class Movies {
 
 export const movies = new Movies();
 
-export const paginationResults = async function (
-  page: number = moviesState.page
-) {
+export const paginationResults = function (page: number = moviesState.page) {
   moviesState.page = page;
 
   const start = (page - 1) * moviesState.resultsPerPage;
