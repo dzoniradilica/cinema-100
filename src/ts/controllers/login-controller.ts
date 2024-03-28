@@ -44,12 +44,3 @@ const init = function () {
 };
 
 init();
-
-// const idk = async function () {
-//   const res = await fetch(`https://65fb1a4614650eb210095a6f.mockapi.io/movies`);
-//   const data = await res.json();
-
-//   console.log(data);
-// };
-
-// idk();
