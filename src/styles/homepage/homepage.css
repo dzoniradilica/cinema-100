@@ -137,7 +137,7 @@ body {
   opacity: 75%;
 }
 
-.active {
+.--active {
   background-color: #fc4747;
 }
 
