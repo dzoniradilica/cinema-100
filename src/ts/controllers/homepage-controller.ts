@@ -1,6 +1,8 @@
 import { session } from '../models/Session';
 import { user } from '../models/User';
-import { movies } from '../models/Movies';
+// import { movies } from '../models/Movies';
+
+import { paginationResults } from '../models/Movies';
 
 import showAndLogoutView from '../views/homepageViews/showAndLogoutView';
 import displayMoviesView from '../views/homepageViews/displayMoviesView';
@@ -36,10 +38,10 @@ const controlLogout = async function () {
 const controlDisplayMovies = async function () {
   try {
     // Get all movies
-    const allMovies = await movies.getAll();
+    // const allMovies = await movies.getAll();
 
     // Send all movies to displayMoviesView
-    displayMoviesView.displayMovies(allMovies);
+    displayMoviesView.displayMovies(await paginationResults(1));
   } catch (err) {
     console.log(err);
   }
