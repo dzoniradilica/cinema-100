@@ -68,6 +68,13 @@ body {
   margin-right: 20px;
   border-radius: 5px;
 }
+.main .row {
+  text-align: center;
+}
+.main .row h3 {
+  color: white;
+  margin-bottom: 20px;
+}
 .main .movies-wrapper {
   padding-bottom: 100px;
 }
@@ -75,10 +82,6 @@ body {
   float: none !important;
   margin-left: auto;
   margin-right: auto;
-}
-.main .movies-wrapper .col-md-10 h3 {
-  color: white;
-  margin-bottom: 20px;
 }
 .main .movies-wrapper .col-md-10 .col-md-3 {
   padding: 0;

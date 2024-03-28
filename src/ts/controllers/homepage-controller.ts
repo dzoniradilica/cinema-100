@@ -7,6 +7,7 @@ import { moviesState } from '../models/Movies';
 
 import showAndLogoutView from '../views/homepageViews/showAndLogoutView';
 import displayMoviesView from '../views/homepageViews/displayMoviesView';
+import paginationView from '../views/homepageViews/paginationView';
 
 // If user dosen't have cookie reloaction to login page
 if (!session.get(document.cookie.split('=')[0])) {
@@ -14,7 +15,7 @@ if (!session.get(document.cookie.split('=')[0])) {
 }
 
 // Show username in nav
-const controlUsernameAndPagination = async function () {
+const controlUsername = async function () {
   try {
     // Get user data
     const singleUser = await user.get(session.sessionId);
@@ -53,10 +54,17 @@ const controlDisplayMovies = async function () {
   }
 };
 
+const controlPagination = async function (btnId: number) {
+  console.log(btnId);
+
+  displayMoviesView.displayMovies(await paginationResults(btnId));
+};
+
 const init = function () {
-  controlUsernameAndPagination();
+  controlUsername();
   controlDisplayMovies();
   showAndLogoutView.addHandlerLogoutUser(controlLogout);
+  paginationView.addHandlerPagination(controlPagination);
 };
 
 init();
