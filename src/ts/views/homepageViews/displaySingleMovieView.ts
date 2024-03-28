@@ -1,8 +1,10 @@
+import { ConfigMovie } from '../../configs/movie-config';
+
 class DisplaySingleMovieView {
-  // seeMoreBtn = document.querySelector('.#seeMore')
   parentElement = document.querySelector(
     '.movies-wrapper .col-md-10'
   )! as HTMLDivElement;
+  allMovies: any;
 
   addHandlerDisplayMovie(handler: Function) {
     let observer = new MutationObserver(mutations => {
@@ -16,7 +18,16 @@ class DisplaySingleMovieView {
             e.preventDefault();
 
             const btn = e.target! as HTMLAnchorElement;
-            window.location.href = `${btn.href}`;
+
+            const allMovies: ConfigMovie[] = this.allMovies;
+
+            const singleMovie = allMovies.find(
+              movie => movie.imdbid === btn.href.slice(-9)
+            );
+
+            window.location.href = `../../../../../moviePage.html`;
+
+            console.log(singleMovie);
           }
         });
       } else {

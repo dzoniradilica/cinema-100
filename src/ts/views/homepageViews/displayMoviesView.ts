@@ -16,7 +16,7 @@ class DisplayMoviesView {
         return `
         <div class="col-md-3">
             <div class="movie-card">
-                 <a class="seeMore" href="#${movie.imdbid}">See more</a>
+                 <a class="seeMore" href="homepage/${movie.imdbid}">See more</a>
                 <div class="image-wrapper">
                 <img
                     class="movie-img"

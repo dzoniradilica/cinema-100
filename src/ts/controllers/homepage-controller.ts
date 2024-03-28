@@ -43,7 +43,7 @@ const controlDisplayMovies = async function () {
     // Get all movies
     const allMovies = await movies.getAll();
 
-    console.log(allMovies);
+    displaySingleMovieView.allMovies = allMovies;
 
     // Send pagination movies to displayMoviesView
     displayMoviesView.displayMovies(await paginationResults(1));
@@ -60,9 +60,7 @@ const controlPagination = async function (btnId: number) {
   displayMoviesView.displayMovies(paginationResults(btnId));
 };
 
-const controlDisplaySingleMovie = async function () {
-  console.log('radi');
-};
+const controlDisplaySingleMovie = async function () {};
 
 const init = function () {
   controlUsername();
