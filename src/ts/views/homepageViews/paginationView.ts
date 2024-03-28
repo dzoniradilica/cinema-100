@@ -4,9 +4,6 @@ class PaginationView {
   parentElement = document.querySelector(
     '.movies-wrapper .col-md-10'
   )! as HTMLDivElement;
-  //   paginationBtns = document.querySelectorAll(
-  //     '.pagination-btn'
-  //   )! as NodeListOf<HTMLButtonElement>;
 
   addHandlerPagination(handler: Function) {
     this.rightArrow.addEventListener('click', e => {
@@ -15,7 +12,6 @@ class PaginationView {
       let btnId = +(e.target! as HTMLButtonElement).dataset.currentBtn!;
 
       btnId++;
-      console.log(btnId);
 
       (e.target! as HTMLButtonElement).setAttribute(
         'data-current-btn',
@@ -36,10 +32,40 @@ class PaginationView {
         btnId = 1;
       }
 
+      this.leftArrow.setAttribute('data-current-btn', String(btnId));
+
       handler(+btnId);
     });
 
-    handler();
+    this.leftArrow.addEventListener('click', e => {
+      this.parentElement.innerHTML = '';
+
+      let btnId = +(e.target! as HTMLButtonElement).dataset.currentBtn!;
+
+      const paginationBtns = (
+        (e.target! as HTMLButtonElement).nextElementSibling as HTMLDivElement
+      ).querySelectorAll('.pagination-btn') as NodeListOf<HTMLButtonElement>;
+
+      if (btnId === 1) {
+        (e.target! as HTMLButtonElement).setAttribute(
+          'data-current-btn',
+          String(paginationBtns.length + 1)
+        );
+
+        btnId = paginationBtns.length + 1;
+      }
+
+      btnId--;
+
+      (e.target! as HTMLButtonElement).setAttribute(
+        'data-current-btn',
+        String(btnId)
+      );
+
+      this.rightArrow.setAttribute('data-current-btn', String(btnId));
+
+      handler(+btnId);
+    });
   }
 }
 
