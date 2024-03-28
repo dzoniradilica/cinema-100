@@ -89,6 +89,11 @@ body {
   margin-right: 5px;
   margin-bottom: 50px;
 }
+.main .movies-wrapper .col-md-10 .col-md-3 .movie-card a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
 .main .movies-wrapper .col-md-10 .col-md-3 .movie-card h4 {
   color: white;
   font-size: 15px;
@@ -105,24 +110,13 @@ body {
   width: 100%;
   height: auto;
 }
-.main .movies-wrapper .col-md-10 .col-md-3 .movie-card .image-wrapper a {
-  position: absolute;
-  bottom: 0;
-  left: 5%;
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-}
-.main .movies-wrapper .col-md-10 .col-md-3 .movie-card .image-wrapper:hover {
-  opacity: 0.8;
-}
 .main .movies-wrapper .col-md-10 .col-md-3 .movie-card .movie-info {
   display: flex;
   align-items: center;
 }
 .main .movies-wrapper .col-md-10 .col-md-3 .movie-card .movie-info span {
-  margin-right: 10px;
-  font-size: 16px;
+  margin-right: 5px;
+  font-size: 14px;
   color: white;
   opacity: 75%;
 }
@@ -134,8 +128,8 @@ body {
   margin-right: 5px;
 }
 .main .movies-wrapper .col-md-10 .col-md-3 .movie-card .movie-info .rating span {
-  margin-right: 10px;
-  font-size: 16px;
+  margin-right: 5px;
+  font-size: 14px;
   color: white;
   opacity: 75%;
 }/*# sourceMappingURL=homepage.css.map */

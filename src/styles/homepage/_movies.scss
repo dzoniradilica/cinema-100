@@ -61,6 +61,12 @@
           margin-right: 5px;
           margin-bottom: 50px;
 
+          a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+          }
+
           h4 {
             color: white;
             font-size: 15px;
@@ -77,19 +83,6 @@
               width: 100%;
               height: auto;
             }
-
-            a {
-              position: absolute;
-              bottom: 0;
-              left: 5%;
-              color: white;
-              text-decoration: none;
-              font-size: 16px;
-            }
-
-            &:hover {
-              opacity: 0.8;
-            }
           }
 
           .movie-info {
@@ -97,8 +90,8 @@
             align-items: center;
 
             span {
-              margin-right: 10px;
-              font-size: 16px;
+              margin-right: 5px;
+              font-size: 14px;
               color: white;
               opacity: 75%;
             }
@@ -112,8 +105,8 @@
               }
 
               span {
-                margin-right: 10px;
-                font-size: 16px;
+                margin-right: 5px;
+                font-size: 14px;
                 color: white;
                 opacity: 75%;
               }

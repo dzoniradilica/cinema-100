@@ -8,18 +8,16 @@ class DisplayMoviesView {
   displayMovies(allMovies: ConfigMovie[]) {
     const html = allMovies
       .map(movie => {
-        const [genres] = movie.genre;
-
         return `
         <div class="col-md-3">
             <div class="movie-card">
+                 <a id="seeMore" href="${movie.imdbid}">See more</a>
                 <div class="image-wrapper">
                 <img
                     class="movie-img"
                     src="${movie.image}"
                     alt="movie-image"
                 />
-                <a id="seeMore" href="${movie.imdbid}">See more</a>
                 </div>
 
                 <h4 class="movie-name">${movie.title}</h4>
@@ -30,7 +28,7 @@ class DisplayMoviesView {
                     <span>${movie.rating}</span>
                 </div>
 
-                <span class="genre">${genres}</span>
+                <span class="genre">${[...movie.genre]}</span>
                 </div>
             </div>
         </div>
@@ -38,7 +36,7 @@ class DisplayMoviesView {
       })
       .join('');
 
-    this.parentElement.innerHTML = html;
+    this.parentElement.insertAdjacentHTML('beforeend', html);
   }
 }
 
