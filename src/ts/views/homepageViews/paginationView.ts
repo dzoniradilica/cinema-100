@@ -6,19 +6,40 @@ class PaginationView {
   )! as HTMLDivElement;
   btnsWrapper = document.querySelector('.btns-numbers')! as HTMLDivElement;
 
+  private changeColorBtn(
+    arrowBtn: HTMLElement,
+    btnId: number,
+    paginationBtns: NodeListOf<HTMLButtonElement>
+  ) {
+    arrowBtn.setAttribute('data-current-btn', String(btnId));
+
+    const changeBtn = Array.from(paginationBtns).find(
+      btn => +btn.dataset.currentBtn! === +btnId
+    )!;
+
+    paginationBtns.forEach(btn => {
+      btn.classList.remove('--active');
+    });
+
+    changeBtn.classList.add('--active');
+  }
+
   addHandlerPagination(handler: Function) {
     this.rightArrow.addEventListener('click', e => {
       this.parentElement.innerHTML = '';
 
+      // Get dataset from button
       let btnId = +(e.target! as HTMLButtonElement).dataset.currentBtn!;
 
       btnId++;
 
+      // Update dataset
       (e.target! as HTMLButtonElement).setAttribute(
         'data-current-btn',
         String(btnId)
       );
 
+      // Select all btns
       const paginationBtns = (
         (e.target! as HTMLButtonElement)
           .previousElementSibling as HTMLDivElement
@@ -33,17 +54,7 @@ class PaginationView {
         btnId = 1;
       }
 
-      this.leftArrow.setAttribute('data-current-btn', String(btnId));
-
-      const changeBtn = Array.from(paginationBtns).find(
-        btn => +btn.dataset.currentBtn! === +btnId
-      )!;
-
-      paginationBtns.forEach(btn => {
-        btn.classList.remove('--active');
-      });
-
-      changeBtn.classList.add('--active');
+      this.changeColorBtn(this.leftArrow, btnId, paginationBtns);
 
       handler(+btnId);
     });
@@ -51,8 +62,10 @@ class PaginationView {
     this.leftArrow.addEventListener('click', e => {
       this.parentElement.innerHTML = '';
 
+      // Get dataset from button
       let btnId = +(e.target! as HTMLButtonElement).dataset.currentBtn!;
 
+      // Select all btns
       const paginationBtns = (
         (e.target! as HTMLButtonElement).nextElementSibling as HTMLDivElement
       ).querySelectorAll('.pagination-btn') as NodeListOf<HTMLButtonElement>;
@@ -68,21 +81,13 @@ class PaginationView {
 
       btnId--;
 
+      // Update dataset
       (e.target! as HTMLButtonElement).setAttribute(
         'data-current-btn',
         String(btnId)
       );
 
-      this.rightArrow.setAttribute('data-current-btn', String(btnId));
-      const changeBtn = Array.from(paginationBtns).find(
-        btn => +btn.dataset.currentBtn! === +btnId
-      )!;
-
-      paginationBtns.forEach(btn => {
-        btn.classList.remove('--active');
-      });
-
-      changeBtn.classList.add('--active');
+      this.changeColorBtn(this.rightArrow, btnId, paginationBtns);
 
       handler(+btnId);
     });
