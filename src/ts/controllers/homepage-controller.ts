@@ -8,6 +8,7 @@ import { moviesState } from '../models/Movies';
 import showAndLogoutView from '../views/homepageViews/showAndLogoutView';
 import displayMoviesView from '../views/homepageViews/displayMoviesView';
 import paginationView from '../views/homepageViews/paginationView';
+import displaySingleMovieView from '../views/homepageViews/displaySingleMovieView';
 
 // If user dosen't have cookie reloaction to login page
 if (!session.get(document.cookie.split('=')[0])) {
@@ -55,7 +56,12 @@ const controlDisplayMovies = async function () {
 };
 
 const controlPagination = async function (btnId: number) {
+  // Send btn id to pagination function
   displayMoviesView.displayMovies(paginationResults(btnId));
+};
+
+const controlDisplaySingleMovie = async function () {
+  console.log('radi');
 };
 
 const init = function () {
@@ -63,6 +69,7 @@ const init = function () {
   controlDisplayMovies();
   showAndLogoutView.addHandlerLogoutUser(controlLogout);
   paginationView.addHandlerPagination(controlPagination);
+  displaySingleMovieView.addHandlerDisplayMovie(controlDisplaySingleMovie);
 };
 
 init();

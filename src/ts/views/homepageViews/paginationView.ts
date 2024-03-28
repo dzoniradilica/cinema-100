@@ -5,6 +5,7 @@ class PaginationView {
     '.movies-wrapper .col-md-10'
   )! as HTMLDivElement;
   btnsWrapper = document.querySelector('.btns-numbers')! as HTMLDivElement;
+  seeMoreBtn = document.querySelector('.seeMore');
 
   private changeColorBtn(
     arrowBtn: HTMLElement,
