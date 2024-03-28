@@ -132,4 +132,27 @@ body {
   font-size: 14px;
   color: white;
   opacity: 75%;
+}
+
+.active {
+  background-color: #fc4747;
+}
+
+.main .movies-wrapper .col-md-10 {
+  text-align: center !important;
+}
+.main .movies-wrapper .col-md-10 .pagination .pagination-wrapper {
+  display: flex;
+}
+.main .movies-wrapper .col-md-10 .pagination .pagination-wrapper .left-arrow {
+  margin-right: 20px;
+}
+.main .movies-wrapper .col-md-10 .pagination .pagination-wrapper .right-arrow {
+  margin-left: 20px;
+}
+.main .movies-wrapper .col-md-10 .pagination .pagination-wrapper button {
+  border-radius: 5px;
+  opacity: 75%;
+  width: 30px;
+  height: 30px;
 }/*# sourceMappingURL=homepage.css.map */
