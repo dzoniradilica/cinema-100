@@ -1,8 +1,9 @@
 import { session } from '../models/Session';
 import { user } from '../models/User';
-// import { movies } from '../models/Movies';
+import { movies } from '../models/Movies';
 
 import { paginationResults } from '../models/Movies';
+import { moviesState } from '../models/Movies';
 
 import showAndLogoutView from '../views/homepageViews/showAndLogoutView';
 import displayMoviesView from '../views/homepageViews/displayMoviesView';
@@ -13,7 +14,7 @@ if (!session.get(document.cookie.split('=')[0])) {
 }
 
 // Show username in nav
-const controlUsername = async function () {
+const controlUsernameAndPagination = async function () {
   try {
     // Get user data
     const singleUser = await user.get(session.sessionId);
@@ -38,17 +39,22 @@ const controlLogout = async function () {
 const controlDisplayMovies = async function () {
   try {
     // Get all movies
-    // const allMovies = await movies.getAll();
+    const allMovies = await movies.getAll();
 
-    // Send all movies to displayMoviesView
+    console.log(allMovies);
+
+    // Send pagination movies to displayMoviesView
     displayMoviesView.displayMovies(await paginationResults(1));
+
+    // Send movie data for render pagination btns
+    displayMoviesView.showBtnsPagination(moviesState);
   } catch (err) {
     console.log(err);
   }
 };
 
 const init = function () {
-  controlUsername();
+  controlUsernameAndPagination();
   controlDisplayMovies();
   showAndLogoutView.addHandlerLogoutUser(controlLogout);
 };

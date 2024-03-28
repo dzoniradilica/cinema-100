@@ -28,8 +28,6 @@ export const paginationResults = async function (
 ) {
   moviesState.page = page;
 
-  await movies.getAll();
-
   const start = (page - 1) * moviesState.resultsPerPage;
   const end = page * moviesState.resultsPerPage;
 

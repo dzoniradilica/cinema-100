@@ -155,4 +155,10 @@ body {
   opacity: 75%;
   width: 30px;
   height: 30px;
+}
+.main .movies-wrapper .col-md-10 .pagination .pagination-wrapper .btns-numbers button {
+  margin-right: 10px;
+}
+.main .movies-wrapper .col-md-10 .pagination .pagination-wrapper .btns-numbers :last-child {
+  margin-right: 0;
 }/*# sourceMappingURL=homepage.css.map */
