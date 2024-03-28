@@ -36,7 +36,7 @@ body {
 }
 
 .hidden {
-  display: none;
+  opacity: 0;
 }
 
 .main .movies-nav-wrapper {
@@ -82,16 +82,21 @@ body {
 }
 .main .movies-wrapper .col-md-10 .col-md-3 {
   padding: 0;
+  height: 100%;
 }
 .main .movies-wrapper .col-md-10 .col-md-3 .movie-card {
   max-width: 250px;
   margin-right: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 .main .movies-wrapper .col-md-10 .col-md-3 .movie-card h4 {
   color: white;
   font-size: 15px;
   font-weight: bold;
+  width: 220px; /* the element needs a fixed width (in px, em, %, etc) */
+  overflow: hidden; /* make sure it hides the content that overflows */
+  white-space: nowrap; /* don't break the line */
+  text-overflow: ellipsis; /* give the beautiful '...' effect */
 }
 .main .movies-wrapper .col-md-10 .col-md-3 .movie-card .image-wrapper {
   position: relative;
@@ -118,6 +123,8 @@ body {
 .main .movies-wrapper .col-md-10 .col-md-3 .movie-card .movie-info span {
   margin-right: 10px;
   font-size: 16px;
+  color: white;
+  opacity: 75%;
 }
 .main .movies-wrapper .col-md-10 .col-md-3 .movie-card .movie-info .rating {
   display: flex;
@@ -129,4 +136,6 @@ body {
 .main .movies-wrapper .col-md-10 .col-md-3 .movie-card .movie-info .rating span {
   margin-right: 10px;
   font-size: 16px;
+  color: white;
+  opacity: 75%;
 }/*# sourceMappingURL=homepage.css.map */

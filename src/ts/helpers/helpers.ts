@@ -1,4 +1,5 @@
 export const API_URL_USERS = `https://65fb1a4614650eb210095a6f.mockapi.io/users`;
+export const API_URL_MOVIES = `https://65fb1a4614650eb210095a6f.mockapi.io/movies`;
 
 export const fetchData = async function (
   type: 'api' | 'api-data',

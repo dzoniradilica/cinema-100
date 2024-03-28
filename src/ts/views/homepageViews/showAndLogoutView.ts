@@ -1,6 +1,6 @@
 import { ConfigUser } from '../../configs/user-config';
 
-class ShowAndLogout {
+class showAndLogoutView {
   username = document.querySelector('#username')! as HTMLSpanElement;
   logoutBtn = document.querySelector('#logout')! as HTMLImageElement;
 
@@ -15,4 +15,4 @@ class ShowAndLogout {
   }
 }
 
-export default new ShowAndLogout();
+export default new showAndLogoutView();

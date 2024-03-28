@@ -1,5 +1,5 @@
 .hidden {
-  display: none;
+  opacity: 0;
 }
 
 .main {
@@ -54,16 +54,21 @@
 
       .col-md-3 {
         padding: 0;
+        height: 100%;
 
         .movie-card {
           max-width: 250px;
           margin-right: 5px;
-          margin-bottom: 20px;
+          margin-bottom: 50px;
 
           h4 {
             color: white;
             font-size: 15px;
             font-weight: bold;
+            width: 220px; /* the element needs a fixed width (in px, em, %, etc) */
+            overflow: hidden; /* make sure it hides the content that overflows */
+            white-space: nowrap; /* don't break the line */
+            text-overflow: ellipsis; /* give the beautiful '...' effect */
           }
 
           .image-wrapper {
@@ -94,6 +99,8 @@
             span {
               margin-right: 10px;
               font-size: 16px;
+              color: white;
+              opacity: 75%;
             }
 
             .rating {
@@ -107,6 +114,8 @@
               span {
                 margin-right: 10px;
                 font-size: 16px;
+                color: white;
+                opacity: 75%;
               }
             }
           }
