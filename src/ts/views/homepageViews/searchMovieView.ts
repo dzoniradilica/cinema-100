@@ -3,9 +3,7 @@ import { ConfigMovie } from '../../configs/movie-config';
 class SearchMovieView {
   searchInput = document.querySelector('.form-control')! as HTMLInputElement;
   bntsPagination = document.querySelector('.btns-numbers')! as HTMLDivElement;
-  parentElement = document.querySelector(
-    '.movies-wrapper .col-md-10'
-  )! as HTMLDivElement;
+  selectGenres = document.querySelector('#genres')! as HTMLSelectElement;
   allMovies: any;
 
   addHandlerSearch(handler: Function) {
@@ -20,12 +18,21 @@ class SearchMovieView {
 
       this.bntsPagination.innerHTML = '';
 
-      if (searchedMovies.length === 0) {
-        this.parentElement.innerHTML =
-          '<p class="error-message">No movies found</p>';
-      }
-
       handler(searchedMovies);
+    });
+  }
+
+  addHandlerGenres(handler: Function) {
+    this.selectGenres.addEventListener('change', e => {
+      const genre = (e.target! as HTMLSelectElement).value;
+      const movies: ConfigMovie[] = this.allMovies;
+
+      const genreMovies = movies.filter(movie => movie.genre.includes(genre));
+
+      this.bntsPagination.innerHTML = '';
+
+      if (genre === 'All') handler(movies);
+      else handler(genreMovies);
     });
   }
 }

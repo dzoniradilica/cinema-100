@@ -64,8 +64,8 @@ const controlPagination = async function (btnId: number) {
 
 const controlDisplaySingleMovie = async function () {};
 
-const controlSearch = async function (allMovies: ConfigMovie[]) {
-  moviesState.allMovies = allMovies;
+const controlSearch = async function (searchedMovies: ConfigMovie[]) {
+  moviesState.allMovies = searchedMovies;
 
   // Send pagination movies to displayMoviesView
   displayMoviesView.displayMovies(await paginationResults(1));
@@ -77,9 +77,20 @@ const controlSearch = async function (allMovies: ConfigMovie[]) {
     '.movies-wrapper .col-md-10'
   )! as HTMLDivElement;
 
-  if (allMovies.length === 0) {
+  // Render error message
+  if (searchedMovies.length === 0) {
     parentElement.innerHTML = '<p class="error-message">No movies found</p>';
   }
+};
+
+const controlGenres = async function (searchedMovies: ConfigMovie[]) {
+  moviesState.allMovies = searchedMovies;
+
+  // Send pagination movies to displayMoviesView
+  displayMoviesView.displayMovies(await paginationResults(1));
+
+  // Send movie data for render pagination btns
+  displayMoviesView.showBtnsPagination(moviesState);
 };
 
 const init = function () {
@@ -89,6 +100,7 @@ const init = function () {
   paginationView.addHandlerPagination(controlPagination);
   displaySingleMovieView.addHandlerDisplayMovie(controlDisplaySingleMovie);
   searchMovieView.addHandlerSearch(controlSearch);
+  searchMovieView.addHandlerGenres(controlGenres);
 };
 
 init();
