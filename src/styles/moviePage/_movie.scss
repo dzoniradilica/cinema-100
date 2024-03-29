@@ -27,7 +27,6 @@
       p {
         margin-top: 10px;
         color: white;
-        opacity: 75%;
         font-size: 18px;
       }
     }
@@ -54,6 +53,30 @@
 
       .rank {
         margin-left: 50px;
+      }
+    }
+  }
+
+  .movie-info-wrapper {
+    margin-top: 40px;
+
+    h4 {
+      color: white;
+      font-weight: 500;
+    }
+
+    p {
+      color: white;
+      opacity: 75%;
+    }
+
+    .writers-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      p {
+        max-width: 400px;
       }
     }
   }

@@ -58,7 +58,6 @@ body {
 .main .movie-card .card-footer p {
   margin-top: 10px;
   color: white;
-  opacity: 75%;
   font-size: 18px;
 }
 .main .video-card .card-header {
@@ -79,4 +78,23 @@ body {
 }
 .main .video-card .card-header .rank {
   margin-left: 50px;
+}
+.main .movie-info-wrapper {
+  margin-top: 40px;
+}
+.main .movie-info-wrapper h4 {
+  color: white;
+  font-weight: 500;
+}
+.main .movie-info-wrapper p {
+  color: white;
+  opacity: 75%;
+}
+.main .movie-info-wrapper .writers-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.main .movie-info-wrapper .writers-wrapper p {
+  max-width: 400px;
 }/*# sourceMappingURL=moviePage.css.map */
