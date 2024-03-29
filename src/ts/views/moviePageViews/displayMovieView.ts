@@ -1,8 +1,8 @@
 import { ConfigMovie } from '../../configs/movie-config';
 
 class DisplayMovieView {
-  movieCard = document.querySelector('.movie-card')! as HTMLDivElement;
-  videoCard = document.querySelector('.video-card')! as HTMLDivElement;
+  movieHeader = document.querySelector('.movie-header')! as HTMLDivElement;
+  movieBody = document.querySelector('.movie-body')! as HTMLDivElement;
   movieInfo = document.querySelector('.movie-info-wrapper')! as HTMLDivElement;
 
   renderMovie(allMovies: ConfigMovie[]) {
@@ -10,60 +10,62 @@ class DisplayMovieView {
 
     const singleMovie = allMovies.find(movie => movie.imdbid === href)!;
 
-    this.renderMovieCard(singleMovie);
-    this.renderVideoCard(singleMovie);
+    this.renderMovieHeader(singleMovie);
+    this.renderMovieBody(singleMovie);
     this.renderMovieInfo(singleMovie);
   }
 
-  private renderMovieCard(movie: ConfigMovie) {
+  private renderMovieHeader(movie: ConfigMovie) {
     const html = `
-    <div class="card-header">
-      <h3 class="movie-name">${movie.title}</h3>
-      <p class="year">(${movie.year})</p>
+    <div class="col-md-8">
+      <div class="movie-info">
+        <h3 class="movie-name">${movie.title}</h3>
+        <p class="year">(${movie.year})</p>
+      </div>
     </div>
 
-    <div class="card-body">
+    <div class="col-md-4">
+      <div class="imdb-info">
+        <div class="rating">
+          <h3>Imdb rating</h3>
+          <span style="color: yellow">&starf;</span>
+          <span class="imdb-rating">${movie.rating}</span>
+          <span>/10</span>
+    </div>
+
+    <div class="rank">
+          <h3>Rank</h3>
+          <span class="imdb-rank">${movie.rank}</span>
+          <span>/100</span>
+        </div>
+      </div>
+    </div>
+    `;
+
+    this.movieHeader.insertAdjacentHTML('afterbegin', html);
+  }
+
+  private renderMovieBody(movie: ConfigMovie) {
+    const html = `
+    <div class="col-md-4">
       <div class="image-wrapper">
         <img src="${movie.image}" alt="movie-image" />
       </div>
     </div>
 
-    <div class="card-footer">
-      <p class="genre">${[...movie.genre]}</p>
-    </div> 
+    <div class="col-md-8">
+      <div class="video-wrapper">
+        <iframe
+          width="100%"
+          height="100%"
+          src="${movie.trailer}"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
     `;
 
-    this.movieCard.insertAdjacentHTML('afterbegin', html);
-  }
-
-  private renderVideoCard(movie: ConfigMovie) {
-    const html = `
-    <div class="card-header">
-      <div class="rating">
-        <h3>Imdb rating</h3>
-        <span style="color: yellow">&starf;</span>
-        <span class="imdb-rating">${movie.rating}</span>
-        <span>/10</span>
-      </div>
-
-      <div class="rank">
-        <h3>Rank</h3>
-        <span class="imdb-rank">${movie.rank}</span>
-        <span>/100</span>
-      </div>
-    </div>
-
-    <div class="card-body">
-      <iframe
-        width="100%"
-        height="473.26"
-        src="${movie.trailer}"
-        frameborder="0"
-      ></iframe>
-    </div>
-  `;
-
-    this.videoCard.insertAdjacentHTML('afterbegin', html);
+    this.movieBody.insertAdjacentHTML('afterbegin', html);
   }
 
   private renderMovieInfo(movie: ConfigMovie) {

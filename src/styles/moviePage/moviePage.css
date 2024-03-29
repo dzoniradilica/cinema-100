@@ -35,46 +35,44 @@ body {
   cursor: pointer;
 }
 
-.main .movie-card {
-  max-width: 320px;
+.main .row {
+  margin-top: 20px;
 }
-.main .movie-card .card-header {
-  margin-bottom: 15px;
-}
-.main .movie-card .card-header h3 {
+.main .row .movie-header .movie-info h3 {
+  font-size: 2rem;
   color: white;
-  margin-bottom: 0;
 }
-.main .movie-card .card-header p {
+.main .row .movie-header .movie-info p {
   color: white;
   opacity: 75%;
 }
-.main .movie-card .card-body .image-wrapper img {
-  width: 100%;
-}
-.main .movie-card .card-footer p {
-  margin-top: 10px;
-  color: white;
-  font-size: 18px;
-}
-.main .video-card .card-header {
+.main .row .movie-header .imdb-info {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: center;
 }
-.main .video-card .card-header h3 {
+.main .row .movie-header .imdb-info h3 {
   color: white;
   opacity: 75%;
   font-weight: 500;
+  font-size: 2rem;
 }
-.main .video-card .card-header span {
+.main .row .movie-header .imdb-info span {
   font-size: 16px;
   color: white;
   opacity: 85%;
 }
-.main .video-card .card-header .rank {
-  margin-left: 50px;
+.main .row .movie-header .imdb-info .rank {
+  margin-left: 40px;
+}
+.main .movie-body .image-wrapper {
+  height: 400px;
+}
+.main .movie-body .image-wrapper img {
+  height: 100%;
+}
+.main .movie-body .video-wrapper {
+  height: 400px;
 }
 .main .movie-info-wrapper {
   margin-top: 40px;
