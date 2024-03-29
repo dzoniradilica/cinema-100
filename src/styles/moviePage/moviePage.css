@@ -35,9 +35,6 @@ body {
   cursor: pointer;
 }
 
-.main {
-  padding-bottom: 200px;
-}
 .main .movie-card {
   max-width: 320px;
 }
@@ -86,15 +83,11 @@ body {
   color: white;
   font-weight: 500;
 }
-.main .movie-info-wrapper p {
+.main .movie-info-wrapper span {
   color: white;
   opacity: 75%;
 }
-.main .movie-info-wrapper .writers-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.main .movie-info-wrapper .writers-wrapper p {
-  max-width: 400px;
+.main .movie-info-wrapper p {
+  color: white;
+  opacity: 75%;
 }/*# sourceMappingURL=moviePage.css.map */

@@ -43,7 +43,7 @@ const controlDisplayMovies = async function () {
     // Get all movies
     const allMovies = await movies.getAll();
 
-    displaySingleMovieView.allMovies = allMovies;
+    console.log(allMovies);
 
     // Send pagination movies to displayMoviesView
     displayMoviesView.displayMovies(await paginationResults(1));

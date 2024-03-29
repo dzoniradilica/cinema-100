@@ -1,7 +1,9 @@
 import { session } from '../models/Session';
 import { user } from '../models/User';
+import { movies } from '../models/Movies';
 
 import showAndLogoutView from '../views/homepageViews/showAndLogoutView';
+import displayMovieView from '../views/moviePageViews/displayMovieView';
 
 // If user dosen't have cookie reloaction to login page
 if (!session.get(document.cookie.split('=')[0])) {
@@ -31,8 +33,13 @@ const controlLogout = async function () {
   }
 };
 
+const controlDisplayMovie = async function () {
+  displayMovieView.renderMovie(await movies.getAll());
+};
+
 const init = function () {
   controlUsername();
+  controlDisplayMovie();
   showAndLogoutView.addHandlerLogoutUser(controlLogout);
 };
 
