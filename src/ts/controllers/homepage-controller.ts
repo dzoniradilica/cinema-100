@@ -9,6 +9,8 @@ import showAndLogoutView from '../views/homepageViews/showAndLogoutView';
 import displayMoviesView from '../views/homepageViews/displayMoviesView';
 import paginationView from '../views/homepageViews/paginationView';
 import displaySingleMovieView from '../views/homepageViews/displaySingleMovieView';
+import searchMovieView from '../views/homepageViews/searchMovieView';
+import { ConfigMovie } from '../configs/movie-config';
 
 // If user dosen't have cookie reloaction to login page
 if (!session.get(document.cookie.split('=')[0])) {
@@ -43,7 +45,7 @@ const controlDisplayMovies = async function () {
     // Get all movies
     const allMovies = await movies.getAll();
 
-    console.log(allMovies);
+    searchMovieView.allMovies = allMovies;
 
     // Send pagination movies to displayMoviesView
     displayMoviesView.displayMovies(await paginationResults(1));
@@ -62,12 +64,31 @@ const controlPagination = async function (btnId: number) {
 
 const controlDisplaySingleMovie = async function () {};
 
+const controlSearch = async function (allMovies: ConfigMovie[]) {
+  moviesState.allMovies = allMovies;
+
+  // Send pagination movies to displayMoviesView
+  displayMoviesView.displayMovies(await paginationResults(1));
+
+  // Send movie data for render pagination btns
+  displayMoviesView.showBtnsPagination(moviesState);
+
+  const parentElement = document.querySelector(
+    '.movies-wrapper .col-md-10'
+  )! as HTMLDivElement;
+
+  if (allMovies.length === 0) {
+    parentElement.innerHTML = '<p class="error-message">No movies found</p>';
+  }
+};
+
 const init = function () {
   controlUsername();
   controlDisplayMovies();
   showAndLogoutView.addHandlerLogoutUser(controlLogout);
   paginationView.addHandlerPagination(controlPagination);
   displaySingleMovieView.addHandlerDisplayMovie(controlDisplaySingleMovie);
+  searchMovieView.addHandlerSearch(controlSearch);
 };
 
 init();

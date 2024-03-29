@@ -55,8 +55,8 @@ class DisplayMoviesView {
     }
 
     this.paginationBtnsWrapper
-      .querySelector('.pagination-btn')!
-      .classList.add('--active');
+      .querySelector('.pagination-btn')
+      ?.classList.add('--active');
   }
 }
 
