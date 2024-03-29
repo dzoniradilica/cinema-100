@@ -1,0 +1,62 @@
+.main {
+  .movie-card {
+    max-width: 320px;
+    .card-header {
+      margin-bottom: 15px;
+
+      h3 {
+        color: white;
+        margin-bottom: 0;
+      }
+
+      p {
+        color: white;
+        opacity: 75%;
+      }
+    }
+
+    .card-body {
+      .image-wrapper {
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .card-footer {
+      p {
+        margin-top: 10px;
+        color: white;
+        opacity: 75%;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .video-card {
+    .card-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+
+      h3 {
+        color: white;
+        opacity: 75%;
+        font-weight: 500;
+      }
+
+      span {
+        font-size: 16px;
+        color: white;
+        opacity: 85%;
+      }
+
+      .rank {
+        margin-left: 50px;
+      }
+    }
+  }
+
+  padding-bottom: 200px;
+}

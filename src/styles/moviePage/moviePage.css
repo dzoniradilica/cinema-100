@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #10141e;
+}
+
+.main .nav {
+  background-color: #161d2f;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.main .nav .logo img {
+  width: 48px;
+  height: 48px;
+}
+.main .nav .info-wrapper {
+  text-align: right;
+  color: white;
+  font-size: 20px;
+}
+.main .nav .info-wrapper span {
+  margin-left: 20px;
+}
+.main .nav .info-wrapper #username {
+  margin-left: 0;
+}
+.main .nav .info-wrapper img {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.main {
+  padding-bottom: 200px;
+}
+.main .movie-card {
+  max-width: 320px;
+}
+.main .movie-card .card-header {
+  margin-bottom: 15px;
+}
+.main .movie-card .card-header h3 {
+  color: white;
+  margin-bottom: 0;
+}
+.main .movie-card .card-header p {
+  color: white;
+  opacity: 75%;
+}
+.main .movie-card .card-body .image-wrapper img {
+  width: 100%;
+}
+.main .movie-card .card-footer p {
+  margin-top: 10px;
+  color: white;
+  opacity: 75%;
+  font-size: 18px;
+}
+.main .video-card .card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.main .video-card .card-header h3 {
+  color: white;
+  opacity: 75%;
+  font-weight: 500;
+}
+.main .video-card .card-header span {
+  font-size: 16px;
+  color: white;
+  opacity: 85%;
+}
+.main .video-card .card-header .rank {
+  margin-left: 50px;
+}/*# sourceMappingURL=moviePage.css.map */

@@ -4,6 +4,9 @@ class DisplaySingleMovieView {
   parentElement = document.querySelector(
     '.movies-wrapper .col-md-10'
   )! as HTMLDivElement;
+  movieNav = document.querySelector('.movies-nav-wrapper')! as HTMLDivElement;
+  moviesWrapper = document.querySelector('.movies-wrapper')! as HTMLDivElement;
+
   allMovies: any;
 
   addHandlerDisplayMovie(handler: Function) {
@@ -25,7 +28,9 @@ class DisplaySingleMovieView {
               movie => movie.imdbid === btn.href.slice(-9)
             );
 
-            window.location.href = `../../../../../moviePage.html`;
+            window.location.href = `../../../../../moviePage.html#${btn.href.slice(
+              -9
+            )}`;
 
             console.log(singleMovie);
           }
