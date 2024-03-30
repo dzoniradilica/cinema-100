@@ -65,32 +65,40 @@ const controlPagination = async function (btnId: number) {
 const controlDisplaySingleMovie = async function () {};
 
 const controlSearch = async function (searchedMovies: ConfigMovie[]) {
-  moviesState.allMovies = searchedMovies;
+  try {
+    moviesState.allMovies = searchedMovies;
 
-  // Send pagination movies to displayMoviesView
-  displayMoviesView.displayMovies(await paginationResults(1));
+    // Send pagination movies to displayMoviesView
+    displayMoviesView.displayMovies(await paginationResults(1));
 
-  // Send movie data for render pagination btns
-  displayMoviesView.showBtnsPagination(moviesState);
+    // Send movie data for render pagination btns
+    displayMoviesView.showBtnsPagination(moviesState);
 
-  const parentElement = document.querySelector(
-    '.movies-wrapper .col-md-10'
-  )! as HTMLDivElement;
+    const parentElement = document.querySelector(
+      '.movies-wrapper .col-md-10'
+    )! as HTMLDivElement;
 
-  // Render error message
-  if (searchedMovies.length === 0) {
-    parentElement.innerHTML = '<p class="error-message">No movies found</p>';
+    // Render error message
+    if (searchedMovies.length === 0) {
+      parentElement.innerHTML = '<p class="error-message">No movies found</p>';
+    }
+  } catch (err) {
+    console.log(err);
   }
 };
 
 const controlGenres = async function (searchedMovies: ConfigMovie[]) {
-  moviesState.allMovies = searchedMovies;
+  try {
+    moviesState.allMovies = searchedMovies;
 
-  // Send pagination movies to displayMoviesView
-  displayMoviesView.displayMovies(await paginationResults(1));
+    // Send pagination movies to displayMoviesView
+    displayMoviesView.displayMovies(await paginationResults(1));
 
-  // Send movie data for render pagination btns
-  displayMoviesView.showBtnsPagination(moviesState);
+    // Send movie data for render pagination btns
+    displayMoviesView.showBtnsPagination(moviesState);
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 const init = function () {
